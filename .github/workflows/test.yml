@@ -113,6 +113,11 @@ jobs:
 
   windows-debug:
     runs-on: windows-2016
+    strategy:
+      matrix:
+        generator: [ 'Visual Studio 15 2017' ]
+        compiler: [ 'MSVC' ]
+        build: [ Debug, Release ]
 
     steps:
       - uses: actions/checkout@v1
@@ -124,13 +129,14 @@ jobs:
         run: cmake -G "Visual Studio 15 2017 Win64" .
 
       - name: Build Solution
-        run: echo "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\bin\MSBuild.exe %GITHUB_WORKSPACE%\\Ark-Cpp-Crypto.sln /t:Build /p:Configuration=Debug /p:Platform=x64"
+          run: call "%GITHUB_WORKSPACE%\\test\\build.cmd"
+#         run: echo "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\bin\MSBuild.exe %GITHUB_WORKSPACE%\\Ark-Cpp-Crypto.sln /t:Build /p:Configuration=Debug /p:Platform=x64"
 
       - name: Tree
         run: tree /f "%GITHUB_WORKSPACE%"
 
       - name: Test
-        run: "%GITHUB_WORKSPACE%\\test\\Debug\\Ark-Cpp-Crypto-tests.exe"
+        run: call "%GITHUB_WORKSPACE%\\test\\Debug\\Ark-Cpp-Crypto-tests.exe"
   # windows-release:
   #   runs-on: windows-2016
   #   steps:
