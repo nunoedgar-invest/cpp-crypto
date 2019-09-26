@@ -132,12 +132,12 @@ jobs:
       - name: Build Solution
         shell: cmd
         run: |          
-         msbuild "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln
+         msbuild "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln"
 
       - name: Test
         shell: cmd
         run: |
-          call "%GITHUB_WORKSPACE%\test\Debug\Ark-Cpp-Crypto-tests.exe"
+          call "%GITHUB_WORKSPACE%\test\Debug\Ark-Cpp-Crypto-tests"
 
   # windows-release:
   #   runs-on: windows-2016
