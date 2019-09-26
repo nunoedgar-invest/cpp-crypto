@@ -139,6 +139,7 @@ jobs:
           dir %GITHUB_WORKSPACE%\build
           dir %GITHUB_WORKSPACE%\test
           dir %GITHUB_WORKSPACE%\test\build
+          dir %GITHUB_WORKSPACE%\test\build\Debug
 
       - name: Tree
         run: tree /f "%GITHUB_WORKSPACE%"
@@ -152,6 +153,7 @@ jobs:
           dir %GITHUB_WORKSPACE%\build
           dir %GITHUB_WORKSPACE%\test
           dir %GITHUB_WORKSPACE%\test\build
+          dir %GITHUB_WORKSPACE%\test\build\Debug
 
           
 #          call ".\build\test\Debug\Ark-Cpp-Crypto-tests"         
