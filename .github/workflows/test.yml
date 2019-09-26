@@ -129,7 +129,7 @@ jobs:
       - name: Build Solution
         run: |
           cd "%GITHUB_WORKSPACE%\\test"
-          call build.cmd
+          command build.cmd
 #         run: echo "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\bin\MSBuild.exe %GITHUB_WORKSPACE%\\Ark-Cpp-Crypto.sln /t:Build /p:Configuration=Debug /p:Platform=x64"
 
       - name: Tree
