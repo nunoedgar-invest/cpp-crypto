@@ -120,7 +120,7 @@ jobs:
         platform: [x86, x64]
         include:
         - os: windows-2016
-          msbuild: '"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\bin\MSBuild.exe"'
+          msbuild: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"'
         - platform: x86
           midpath: ''
         - platform: x64
