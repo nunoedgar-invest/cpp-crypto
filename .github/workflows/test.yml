@@ -136,15 +136,7 @@ jobs:
           cmake --build .
           cd ..
           dir %GITHUB_WORKSPACE%
-
-
-
-#          ${{ matrix.msbuild }} "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln" /t:Build /p:Configuration=${{ matrix.config }} /p:Platform=${{ matrix.platform }}
-
-#          call "%GITHUB_WORKSPACE%\build.cmd"
-
-#         run: "%GITHUB_WORKSPACE%\\Ark-Cpp-Crypto.sln"
-#         run: echo "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\bin\MSBuild.exe %GITHUB_WORKSPACE%\\Ark-Cpp-Crypto.sln /t:Build /p:Configuration=Debug /p:Platform=x64"
+          dir %GITHUB_WORKSPACE%\build
 
       - name: Tree
         run: tree /f "%GITHUB_WORKSPACE%"
@@ -152,7 +144,7 @@ jobs:
       - name: Test
         shell: cmd
         run: |
-          dir %GITHUB_WORKSPACE%\test\Debug
+          dir %GITHUB_WORKSPACE%\test
           call "%GITHUB_WORKSPACE%\test\Debug\Ark-Cpp-Crypto-tests"
           
 #          "Ark-Cpp-Crypto-tests.exe"
