@@ -135,7 +135,7 @@ jobs:
          msbuild "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln"
 
       - name: Test
-        run: "%GITHUB_WORKSPACE%\test\Debug\Ark-Cpp-Crypto-tests"
+        run: call "%GITHUB_WORKSPACE%\test\Debug\Ark-Cpp-Crypto-tests"
 
   # windows-release:
   #   runs-on: windows-2016
