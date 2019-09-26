@@ -139,7 +139,7 @@ jobs:
       - name: Build Solution
         shell: cmd
         run: |
-          ${{ matrix.msbuild }} %GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln /p:Configuration=${{ matrix.config }} /p:Platform=${{ matrix.platform }}
+          ${{ matrix.msbuild }} "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln" /t:Build /p:Configuration=${{ matrix.config }} /p:Platform=${{ matrix.platform }}
           dir %GITHUB_WORKSPACE%
           dir %GITHUB_WORKSPACE%\build
           
