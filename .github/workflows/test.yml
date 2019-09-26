@@ -129,7 +129,7 @@ jobs:
       - name: Build Solution
         shell: cmd
         run: |
-          cd %GITHUB_WORKSPACE%\test
+          cd %GITHUB_WORKSPACE%
           mkdir build
           cd build
           cmake ..
@@ -137,9 +137,7 @@ jobs:
           cd ..
           dir %GITHUB_WORKSPACE%
           dir %GITHUB_WORKSPACE%\build
-          dir %GITHUB_WORKSPACE%\test
-          dir %GITHUB_WORKSPACE%\test\build
-          dir %GITHUB_WORKSPACE%\test\build\Debug
+          dir %GITHUB_WORKSPACE%\build\Debug
 
       - name: Tree
         run: tree /f "%GITHUB_WORKSPACE%"
@@ -148,12 +146,10 @@ jobs:
         shell: cmd
         run: |
           cd %GITHUB_WORKSPACE%
-          call "test\Debug\Ark-Cpp-Crypto-tests"
+          call "build\Debug\Ark-Cpp-Crypto-tests"
           dir %GITHUB_WORKSPACE%
           dir %GITHUB_WORKSPACE%\build
-          dir %GITHUB_WORKSPACE%\test
-          dir %GITHUB_WORKSPACE%\test\build
-          dir %GITHUB_WORKSPACE%\test\build\Debug
+          dir %GITHUB_WORKSPACE%\build\Debug
 
           
 #          call ".\build\test\Debug\Ark-Cpp-Crypto-tests"         
