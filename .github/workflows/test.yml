@@ -128,14 +128,9 @@ jobs:
 
       - name: Build Solution
         shell: cmd
-        run: |
-          cd "%GITHUB_WORKSPACE%"
-          rmdir /S /Q build
-          mkdir build
-          cd build
-          cmake ..
-          cmake --build .
-          cd ..
+        run: "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\bin\MSBuild.exe %GITHUB_WORKSPACE%\\Ark-Cpp-Crypto.sln /t:Build /p:Configuration=Debug /p:Platform=x64"
+
+#         run: "%GITHUB_WORKSPACE%\\Ark-Cpp-Crypto.sln"
 #         run: echo "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\bin\MSBuild.exe %GITHUB_WORKSPACE%\\Ark-Cpp-Crypto.sln /t:Build /p:Configuration=Debug /p:Platform=x64"
 
       - name: Tree
