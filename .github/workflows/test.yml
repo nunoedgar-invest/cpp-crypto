@@ -129,7 +129,8 @@ jobs:
       - name: Build Solution
         shell: cmd
         run: |
-          call "%GITHUB_WORKSPACE%\build.cmd"
+          call "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln"
+#          call "%GITHUB_WORKSPACE%\build.cmd"
           dir %GITHUB_WORKSPACE%
           dir %GITHUB_WORKSPACE%\build
 
