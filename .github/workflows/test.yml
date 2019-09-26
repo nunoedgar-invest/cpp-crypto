@@ -134,18 +134,10 @@ jobs:
         run: |          
          msbuild "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln
 
-      - name: Tree
-        run: tree /f "%GITHUB_WORKSPACE%"
-
       - name: Test
         shell: cmd
         run: |
-          call "%GITHUB_WORKSPACE%build\Debug\Ark-Cpp-Crypto-tests.exe"
-
-          
-#          call ".\build\test\Debug\Ark-Cpp-Crypto-tests"         
-#          "Ark-Cpp-Crypto-tests.exe"
-#         run: "%GITHUB_WORKSPACE%\\test\\Debug\\Ark-Cpp-Crypto-tests.exe"
+          call "%GITHUB_WORKSPACE%\test\Debug\Ark-Cpp-Crypto-tests.exe"
 
   # windows-release:
   #   runs-on: windows-2016
