@@ -132,12 +132,12 @@ jobs:
       - name: Build Solution
         shell: cmd
         run: |          
-         cd %GITHUB_WORKSPACE%
-         mkdir build
-         cd build
-         cmake ..
-         cmake --build .
-         cd ..
+#         cd %GITHUB_WORKSPACE%
+#         mkdir build
+#         cd build
+#         cmake ..
+#         cmake --build .
+#         cd ..
          msbuild "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln
 
          dir %GITHUB_WORKSPACE%
