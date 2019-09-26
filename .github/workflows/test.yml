@@ -128,16 +128,18 @@ jobs:
 
       - name: Build Solution
         shell: cmd
-        run: |
-          cd %GITHUB_WORKSPACE%
-          mkdir build
-          cd build
-          cmake ..
-          cmake --build .
-          cd ..
-          dir %GITHUB_WORKSPACE%
-          dir %GITHUB_WORKSPACE%\build
-          dir %GITHUB_WORKSPACE%\build\Debug
+        run: |          
+         cd %GITHUB_WORKSPACE%
+         mkdir build
+         cd build
+         cmake ..
+         cmake --build .
+         cd ..
+         MSBuild.exe "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln
+
+#          dir %GITHUB_WORKSPACE%
+#          dir %GITHUB_WORKSPACE%\build
+#          dir %GITHUB_WORKSPACE%\build\Debug
 
       - name: Tree
         run: tree /f "%GITHUB_WORKSPACE%"
