@@ -138,6 +138,7 @@ jobs:
           dir %GITHUB_WORKSPACE%
           dir %GITHUB_WORKSPACE%\build
           dir %GITHUB_WORKSPACE%\test
+          dir %GITHUB_WORKSPACE%\test\build
 
       - name: Tree
         run: tree /f "%GITHUB_WORKSPACE%"
@@ -145,10 +146,12 @@ jobs:
       - name: Test
         shell: cmd
         run: |
-          call "%GITHUB_WORKSPACE%\test\Debug\Ark-Cpp-Crypto-tests"
+          cd %GITHUB_WORKSPACE%
+          call "test\Debug\Ark-Cpp-Crypto-tests"
           dir %GITHUB_WORKSPACE%
           dir %GITHUB_WORKSPACE%\build
           dir %GITHUB_WORKSPACE%\test
+          dir %GITHUB_WORKSPACE%\test\build
 
           
 #          call ".\build\test\Debug\Ark-Cpp-Crypto-tests"         
