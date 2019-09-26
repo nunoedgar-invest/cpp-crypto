@@ -143,7 +143,7 @@ jobs:
         shell: cmd
         run: |
           dir %GITHUB_WORKSPACE%\test\Debug
-          call %GITHUB_WORKSPACE%\test\Debug\Ark-Cpp-Crypto-tests.exe
+          call "%GITHUB_WORKSPACE%\test\Debug\Ark-Cpp-Crypto-tests"
           
 #          "Ark-Cpp-Crypto-tests.exe"
 #         run: "%GITHUB_WORKSPACE%\\test\\Debug\\Ark-Cpp-Crypto-tests.exe"
