@@ -115,9 +115,7 @@ jobs:
     runs-on: windows-2016
     strategy:
       matrix:
-        generator: [ 'Visual Studio 15 2017' ]
-        compiler: [ 'MSVC' ]
-        build: [ Debug, Release ]
+        build: [ Debug ]
 
     steps:
       - uses: actions/checkout@v1
