@@ -116,7 +116,10 @@ jobs:
     strategy:
       matrix:
         build: [ Debug ]
-        msbuild: '"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\bin\MSBuild.exe"'
+        include:
+        - os: windows-2016
+          msbuild: '"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\bin\MSBuild.exe"'
+
     steps:
       - uses: actions/checkout@v1
 
