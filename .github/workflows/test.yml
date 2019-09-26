@@ -129,7 +129,7 @@ jobs:
       - name: Build Solution
         shell: cmd
         run: |
-          cd "%GITHUB_WORKSPACE%\\test"
+          cd "%GITHUB_WORKSPACE%"
           rmdir /S /Q build
           mkdir build
           cd build
