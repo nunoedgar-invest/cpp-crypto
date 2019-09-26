@@ -144,7 +144,7 @@ jobs:
       - name: Test
         shell: cmd
         run: |
-          cd "%GITHUB_WORKSPACE%\\tes\\Debug"
+          cd "%GITHUB_WORKSPACE%\\test\\Debug"
           "Ark-Cpp-Crypto-tests.exe"
 #         run: "%GITHUB_WORKSPACE%\\test\\Debug\\Ark-Cpp-Crypto-tests.exe"
 
