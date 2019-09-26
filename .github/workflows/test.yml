@@ -115,17 +115,7 @@ jobs:
     runs-on: windows-2016
     strategy:
       matrix:
-        os: [windows-2016]
         build: [Debug]
-        platform: [x86, x64]
-        include:
-        - os: windows-2016
-          msbuild: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"'
-        - platform: x86
-          midpath: ''
-        - platform: x64
-          midpath: 'x64\'
-      fail-fast: false
 
     steps:
       - uses: actions/checkout@v1
@@ -139,10 +129,17 @@ jobs:
       - name: Build Solution
         shell: cmd
         run: |
-          ${{ matrix.msbuild }} "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln" /t:Build /p:Configuration=${{ matrix.config }} /p:Platform=${{ matrix.platform }}
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          cd ..
           dir %GITHUB_WORKSPACE%
           dir %GITHUB_WORKSPACE%\build
-          
+
+
+#          ${{ matrix.msbuild }} "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln" /t:Build /p:Configuration=${{ matrix.config }} /p:Platform=${{ matrix.platform }}
+
 #          call "%GITHUB_WORKSPACE%\build.cmd"
 
 #         run: "%GITHUB_WORKSPACE%\\Ark-Cpp-Crypto.sln"
