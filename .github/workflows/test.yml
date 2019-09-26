@@ -116,7 +116,7 @@ jobs:
     strategy:
       matrix:
         build: [ Debug ]
-
+        msbuild: '"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\bin\MSBuild.exe"'
     steps:
       - uses: actions/checkout@v1
 
@@ -129,7 +129,7 @@ jobs:
       - name: Build Solution
         shell: cmd
         run: |
-          msbuild "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln"
+          ${{ matrix.msbuild }} %GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln
           dir %GITHUB_WORKSPACE%
           dir %GITHUB_WORKSPACE%\build
           
