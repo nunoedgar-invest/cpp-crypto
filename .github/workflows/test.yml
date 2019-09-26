@@ -130,9 +130,10 @@ jobs:
         shell: cmd
         run: |
           call "%GITHUB_WORKSPACE%\Ark-Cpp-Crypto.sln"
-#          call "%GITHUB_WORKSPACE%\build.cmd"
           dir %GITHUB_WORKSPACE%
           dir %GITHUB_WORKSPACE%\build
+          
+#          call "%GITHUB_WORKSPACE%\build.cmd"
 
 #         run: "%GITHUB_WORKSPACE%\\Ark-Cpp-Crypto.sln"
 #         run: echo "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Current\bin\MSBuild.exe %GITHUB_WORKSPACE%\\Ark-Cpp-Crypto.sln /t:Build /p:Configuration=Debug /p:Platform=x64"
