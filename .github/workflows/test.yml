@@ -142,7 +142,12 @@ jobs:
         run: tree /f "%GITHUB_WORKSPACE%"
 
       - name: Test
-        run: "%GITHUB_WORKSPACE%\\test\\Debug\\Ark-Cpp-Crypto-tests.exe"
+        shell: cmd
+        run: |
+          cd "%GITHUB_WORKSPACE%\\tes\\Debug"
+          "Ark-Cpp-Crypto-tests.exe"
+#         run: "%GITHUB_WORKSPACE%\\test\\Debug\\Ark-Cpp-Crypto-tests.exe"
+
   # windows-release:
   #   runs-on: windows-2016
   #   steps:
